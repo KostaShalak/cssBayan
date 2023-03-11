@@ -51,11 +51,6 @@ select {
   font: inherit;
 }
 
-/* span {
-  display: inline-block;
-} */
-
-
 /* Styles */
 
 h1 {
@@ -71,6 +66,15 @@ h1 {
 
 .accord__item {
   border-top: 0.1em solid #000;
+  color: aquamarine;
+}
+
+.accord__item:hover {
+  color: #000000;
+}
+
+.accord__item:hover label > span.accord__arrow-down{
+  border-color: #000000 transparent transparent transparent;
 }
 
 /* remove input */
@@ -80,6 +84,7 @@ h1 {
   width: 0;
   height: 0;
   display: none;
+  
 }
 
 .accord__input:checked ~.accord__box {
@@ -88,10 +93,13 @@ h1 {
 
 .accord__input:checked ~.accord__title {
   background-color: aquamarine;
+  transition: background .3s ease;
 }
 
-.accord__input:checked ~.accord__arrow-up {
-  display: block;
+.accord__input:checked ~label > span.accord__arrow-down {
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .accord__title {
@@ -100,25 +108,21 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4em;
-  margin-bottom: 1em;
-}
-
-.accord__arrow-up {
-  border-style: solid;
-  border-width: 0 5px 8px 5px;
-  border-color: transparent transparent #000000 transparent;
+  padding: 0.2em 0.4em;
+  margin-bottom: 0.2em;
 }
 
 .accord__arrow-down {
   border-style: solid;
   border-width: 8px 5px 0 5px;
-  border-color: #000000 transparent transparent transparent;
+  border-color: aquamarine transparent transparent transparent;
 }
 
 .accord__box {
   display: none;
   cursor: pointer;
+  margin-bottom: 1em;
+  background-color: #c9c9c963;
 }
 
 .accord__img {
