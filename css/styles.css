@@ -69,7 +69,12 @@ h1 {
 }
 
 .accord:hover > .accord__item > .accord__title  > .accord__arrow-down{
-  border-color: #000000 transparent transparent transparent;
+  display: inline-block;
+}
+
+.accord:active > .accord__item > .accord__title  > .accord__arrow-down{
+  display: inline-block;
+  
 }
 
 .accord__item {
@@ -77,11 +82,11 @@ h1 {
   color: blue;
 }
 
-li:active >.accord__title{
+.accord__item:active >.accord__title{
   color: blue;
 }
 
-li:active >.accord__item:hover >.accord__title >.accord__arrow-down{
+.accord__item:active >.accord__title >.accord__arrow-down{
   border-color: blue transparent transparent transparent;
 }
 
@@ -134,9 +139,10 @@ li:active >.accord__item:hover >.accord__title >.accord__arrow-down{
 }
 
 .accord__arrow-down {
+  display: none;
   border-style: solid;
   border-width: 8px 5px 0 5px;
-  border-color: blue transparent transparent transparent;
+  border-color: #000 transparent transparent transparent;
 }
 
 .accord__box {
@@ -178,4 +184,34 @@ li:active >.accord__item:hover >.accord__title >.accord__arrow-down{
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+@media screen and (max-width: 821px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .container {
+    width: 100%;
+  }
+  .accord__title {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 532px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .accord__title {
+    font-size: 1em;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+  .accord__input:checked ~.accord__box {
+    height: 14em;
+  }
 }
