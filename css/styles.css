@@ -64,17 +64,25 @@ h1 {
   padding: 0 0.6em;
 }
 
-.accord__item {
-  border-top: 0.1em solid #000;
-  color: aquamarine;
-}
-
-.accord__item:hover {
+.accord:hover > .accord__item {
   color: #000000;
 }
 
-.accord__item:hover label > span.accord__arrow-down{
+.accord:hover > .accord__item > .accord__title  > .accord__arrow-down{
   border-color: #000000 transparent transparent transparent;
+}
+
+.accord__item {
+  border-top: 0.1em solid #000;
+  color: blue;
+}
+
+li:active >.accord__title{
+  color: blue;
+}
+
+li:active >.accord__item:hover >.accord__title >.accord__arrow-down{
+  border-color: blue transparent transparent transparent;
 }
 
 /* remove input */
@@ -87,16 +95,30 @@ h1 {
   
 }
 
-.accord__input:checked ~.accord__box {
-  display: block;
+.accord__input:checked ~.accord__box{
+  font-size: 100%;
+  height: 22em;
+  transform: scale(1);
 }
 
 .accord__input:checked ~.accord__title {
-  background-color: aquamarine;
-  transition: background .3s ease;
+  color: #000;
 }
 
-.accord__input:checked ~label > span.accord__arrow-down {
+.accord__input:checked ~.accord__title >.accord__arrow-down{
+  transform: rotate(180deg);
+  display: inline-block;
+  border-color: #000000 transparent transparent transparent;
+}
+
+.accord__item:hover >.accord__box { 
+  transform: scale(1);
+  transition: all 0.5s ease;
+  font-size: 100%;
+  height: 22em;
+}
+
+.accord__item:hover >.accord__title >.accord__arrow-down {
   transform: rotate(180deg);
   transition: all 0.3s ease;
   display: inline-block;
@@ -109,23 +131,51 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 0.2em 0.4em;
-  margin-bottom: 0.2em;
 }
 
 .accord__arrow-down {
   border-style: solid;
   border-width: 8px 5px 0 5px;
-  border-color: aquamarine transparent transparent transparent;
+  border-color: blue transparent transparent transparent;
 }
 
 .accord__box {
-  display: none;
   cursor: pointer;
-  margin-bottom: 1em;
+  padding-bottom: 1em;
+  padding-top: 1em;
   background-color: #c9c9c963;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  transform: scale(0);
+  transition: all 0.5s ease;
+  font-size: 0;
 }
 
-.accord__img {
-  max-width: 50%;
-  margin: 0 auto;
+.accord__img-1 {
+  background-image: url(../images/meme.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.accord__img-2 {
+  background-image: url(../images/tom.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.accord__img-3 {
+  background-image: url(../images/cat.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.accord__img-4 {
+  background-image: url(../images/2022q3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
